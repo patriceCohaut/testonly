@@ -17,8 +17,11 @@ This proxy take POST request from a Client and call the O2G REST API with proppe
 
 POST
 URI : {URL}/o2g_api_proxy.php
-PARAMETERS : 
-	method  : 
+
+PARAMETERS :
+
+	method  :
+	 
 		create_session | refresh_session | get_session_info | logout_session
 		get_user_status
 		get_status
