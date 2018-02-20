@@ -1,19 +1,15 @@
-# Alcatel-Lucent Enteprise - OmniPCX Open Gateway (02G) - PLAYGROUND #
+# Alcatel-Lucent Enteprise - OmniPCX Open Gateway (02G) - PLAYGROUND 
 
-For onboarding and playground purpose
-This is a simple API proxy running on PHP server side. 
-This proxy take POST request from a Client and call the O2G REST API with propper ressources and return the response to the initial Request
+*For developers onboarding and playground purpose.*
 
-[link to Google!](http://google.com)
+This is a simple **API proxy** running on **PHP** server side. 
+This proxy take POST request from a Client and call the O2G REST API with propper ressources and return the response to the initial Request. For some ressources, this acts as a wrapper. 
 
+[ALE OpenGateway Home Page](http://opengateway.ale-aapp.com/)
+[ALE Application Partner Program (developer program)](https://www.al-enterprise.com/en/partners/aapp/)
 
-For onboarding and playground purpose
-This is a simple API proxy running on PHP server side. 
-This proxy take POST request from a Client and call the O2G REST API with propper ressources and return the response to the initial Request
-
-POST
-## URI : {URL}/o2g_api_proxy.php
-
+## METHOD : POST
+## URI : {YOUR PHP SERVER}/o2g_api_proxy.php
 ## PARAMETERS :
 
 	method  :
@@ -37,5 +33,10 @@ POST
 	nodeId : 
 	recordId : 
 	callee : 
+
+
+## settings 
+1. define your O2G URI in `define("ROXE_FQDN", 'URL:PORT/api/rest')`
+2. define your HTP poxy (if any)  in `define("HTTP_PROXY", '')`
 
 
