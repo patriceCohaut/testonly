@@ -1,20 +1,20 @@
-# testonly
-Alcatel-Lucent Enteprise - OmniPCX Open Gateway (02G) - TESTONLY
+# Alcatel-Lucent Enteprise - OmniPCX Open Gateway (02G) - PLAYGROUND #
 
 For onboarding and playground purpose
 This is a simple API proxy running on PHP server side. 
 This proxy take POST request from a Client and call the O2G REST API with propper ressources and return the response to the initial Request
 
+[link to Google!](http://google.com)
 
-/* 
+
 For onboarding and playground purpose
 This is a simple API proxy running on PHP server side. 
 This proxy take POST request from a Client and call the O2G REST API with propper ressources and return the response to the initial Request
 
 POST
-URI : {URL}/o2g_api_proxy.php
+## URI : {URL}/o2g_api_proxy.php
 
-PARAMETERS :
+## PARAMETERS :
 
 	method  :
 	 
@@ -38,4 +38,4 @@ PARAMETERS :
 	recordId : 
 	callee : 
 
-*/
+
