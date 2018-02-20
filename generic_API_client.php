@@ -52,7 +52,6 @@ define("HTTP_FORM_CONTENT_TYPE_MULTIPART", 1);
 
 $certificate_file = null;
 
-
 // get the curloption ids  
 $constants = get_defined_constants(true);
 $curlOptLookup = preg_grep('/^CURLOPT_/', array_flip($constants['curl']));
