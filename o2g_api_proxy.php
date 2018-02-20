@@ -503,53 +503,9 @@
     		$recordId = $_POST['recordId']; 
 		    $r= simple_rest_client(ROXE_FQDN."/1.0/comlog/records".$queryParams, 'PUT',$rest_params, [], $cookieText);
 		    $rest_sequence=$r ;
-
 		    
 		break; 
 
-
-		// get mailboxes
-		case "get_mailboxes" : 
-
-			$cookieText= roxe_verify_valid_cookie($action, $method); 
-
-			$rest_params = array('password' => '159753');
-			$rb= simple_rest_client(ROXE_FQDN."/1.0/messaging/mailboxes/19150-407-MAILBOX?loginName=oxe19150", 'POST',$rest_params, [], $cookieText);
-		    $rest_sequence=$rb; 
-		    break; 
-
-
-			// $rest_params = array('loginName'=> "oxe19150");
-			// $rb= simple_rest_client(ROXE_FQDN."/1.0/messaging/mailboxes/19150-407-MAILBOX/voicemails", 'GET',$rest_params, [], $cookieText);
-		 //    $rest_sequence=$rb; 
-
-
-		 //    break;  
-
-		
-    		// parameters 
-    		$LOGINNAME = $_POST['loginName']; 
-    		$rest_params = array('loginName' => $LOGINNAME); 
-		    $r= simple_rest_client(ROXE_FQDN."/1.0/messaging/mailboxes/", 'GET',$rest_params, [], $cookieText);
-		    $rest_sequence=$r ;
-
-		    if ($r['success']) {
-
-			    // convert attributes into name:value pairs 
-			    foreach ($r['response']['mailboxes'] as $key => $mailBox) {
-
-					$queryParams =  "?loginName=$LOGINNAME"; 
-					$rest_params = array('password' => '159753');
-
-				    $rb= simple_rest_client(ROXE_FQDN."/1.0/messaging/mailboxes/".$mailBox['id'].$queryParams, 'POST',$rest_params, [], $cookieText);
-				    $rest_sequence['response']['mailboxes'][$key]['details']=$rb['response'] ;
-			    }
-
-		    } else 
-		    	o2g_early_die('400', 'error in request'); 
-		   
-
-		break;
 
 		// routing forward to 
 		case "forward_to" : 
@@ -569,10 +525,8 @@
 		    $rest_sequence['routing/forwardroute[PUT']= $r;
 
 		    if ($r['success']) {
-
 			 			    
 		    }
-
 
 
 		break;
@@ -600,11 +554,11 @@
 			$cookieText= roxe_verify_valid_cookie($acsubscriberNumbertion, $method); 
 
 			// delete the existing subscription
-			$subId="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkM2IiwiaWF0IjoxNTE4NTUyNDE5fQ.F9bGcPzYjoMMKDnupnZYJbmplySaPNnoLYD02LJO2-o"; 
-			$rest_params = array();
-			$o2g_url = ROXE_FQDN."/1.0/subscriptions/".$subId ; 
-		    $r= simple_rest_client($o2g_url, 'DELETE',$rest_params, [], $cookieText);
-		    $rest_sequence['delete']= $r;
+			// $subId="***tests***"; 
+			// $rest_params = array();
+			// $o2g_url = ROXE_FQDN."/1.0/subscriptions/".$subId ; 
+		 //    $r= simple_rest_client($o2g_url, 'DELETE',$rest_params, [], $cookieText);
+		 //    $rest_sequence['delete']= $r;
 
 
 			$rest_JSON_Params = ' { 
